@@ -12,6 +12,8 @@ function computerChoice() {
 // Assign computer choice to computer selection\
 let computerSelection = computerChoice()
 // Ask player for selection input
+let playerSelection = prompt("Enter 'rock', 'paper', or 'scissors'")
+playerSelection = playerSelection.toLowerCase()
 
 // Assign player input to player selection
 
