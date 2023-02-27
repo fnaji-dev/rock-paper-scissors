@@ -12,11 +12,11 @@ function computerChoice() {
 function playRound(playerSelection, computerSelection){
 
     // Assign computer choice to computer selection\
-    let computerSelection = computerChoice()
+    computerSelection = computerChoice()
 
     // Ask player for selection input
     // Assign player input to player selection
-    let playerSelection = prompt("Enter 'rock', 'paper', or 'scissors'")
+    playerSelection = prompt("Enter 'rock', 'paper', or 'scissors'")
     playerSelection = playerSelection.toLowerCase()
 
     // Check player selection against computer selection
@@ -38,3 +38,28 @@ function playRound(playerSelection, computerSelection){
         }
     }
 }
+
+function game() {
+    let winCount = 0;
+    let lossCount = 0;
+    let tieCount = 0;
+
+    for (let i = 0; i < 5; i++) {
+        switch(playRound()) {
+            case "win":
+                winCount += 1;
+                break;
+            case "loss":
+                lossCount += 1;
+                break
+            case "tie":
+                tieCount += 1;
+                break;
+        }
+        if (i === 4) {
+        console.log(`Results of 5 rounds:\n${winCount} Wins - ${lossCount} Losses - ${tieCount} Ties`);
+        }
+    }
+}
+
+game()
