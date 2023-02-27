@@ -22,21 +22,19 @@ function playRound(playerSelection, computerSelection){
     // Check player selection against computer selection
     // Inform player of win/loss
     if (playerSelection === computerSelection) {
-        console.log(`It's a tie, ${playerSelection} against ${computerSelection}!`)
+        return "tie"
     } else {
         switch(playerSelection + "-" + computerSelection) {
             case "rock-scissors":
             case "paper-rock":
             case "scissors-paper":
-                console.log(`You win, ${playerSelection} beats ${computerSelection}!`)
-                break;
+                return "win"
             case "rock-paper":
             case "paper-scissors":
             case "scissors-rock":
-                console.log(`Oh no, ${playerSelection} loses to ${computerSelection}! `)
-                break;
+                return "loss"
             default:
-                console.log(`Oops, ${playerSelection} isn't a valid choice for this game...`)
+                return "bad input"
         }
     }
 }
